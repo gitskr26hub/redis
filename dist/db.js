@@ -1,11 +1,9 @@
-import { Sequelize } from "sequelize";
-
-const sequelize = new Sequelize(
-  'bidding-module-db1',
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const sequelize_1 = require("sequelize");
+const sequelize = new sequelize_1.Sequelize('drizzle_crud_pro', 
 //   process.env.Azureuser,
-  'root',
-  'root',
-  {
+'root', 'root', {
     dialect: "mysql",
     // pool: {
     //   max: 5, // maximum number of connections
@@ -16,14 +14,11 @@ const sequelize = new Sequelize(
     host: 'localhost',
     port: 3306,
     dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false, // You can set this to true if you want strict SSL verification
-      },
+        ssl: {
+            require: true,
+            rejectUnauthorized: false, // You can set this to true if you want strict SSL verification
+        },
     },
     logging: false, // Disable logging
-  }
-);
-
-
-export default sequelize
+});
+exports.default = sequelize;
